@@ -1,18 +1,20 @@
-import Logo2 from './assets/images/Logo-Circle.png';
-import Logo from '/Logo-Circle.png';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Nav from './components/Nav';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Products from './pages/Products';
 
 function App() {
   return (
-    <>
-      <h1>Hello</h1>
-      <a href="https://vitejs.dev" target="_blank">
-        <img src={Logo} className="logo" alt="Vite logo" />
-      </a>
-      <a href="https://react.dev" target="_blank">
-        <img src={Logo2} className="logo react" alt="React logo" />
-      </a>
-    </>
+    <div id="App">
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/cart' element={<Cart />} />
+      </Routes>
+    </div>
   );
 }
 

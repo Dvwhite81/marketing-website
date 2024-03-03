@@ -1,0 +1,54 @@
+
+#Nav {
+  align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100%;
+  justify-content: center;
+}
+
+.nav-div {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  background-color: black;
+  padding: 0.5rem;
+  position: absolute;
+  text-align: center;
+  top: 8vh;
+  transition: ease-in-out 0.5s;
+  width: 100%;
+}
+
+.dropdown-content li {
+  list-style: none;
+  margin: 0.5rem;
+}
+
+.dropdown-content a {
+  color: whitesmoke;
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#Nav img {
+  cursor: pointer;
+  height: 7vh;
+  margin: auto;
+}
+
+#Nav img:hover,
+.dropdown-content li:hover {
+  transform: scale(1.2);
+  transition: ease-in-out 0.2s;
+}
