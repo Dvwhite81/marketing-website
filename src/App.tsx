@@ -20,7 +20,7 @@ function App() {
     const itemToUpdate = copy.find((product) => product.item.name === item.name);
     if (!itemToUpdate) return;
 
-    itemToUpdate.quantity += quantity;
+    itemToUpdate.quantity = quantity;
 
     setCartItems(copy);
   }

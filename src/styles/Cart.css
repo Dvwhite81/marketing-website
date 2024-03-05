@@ -1,0 +1,15 @@
+.item-in-cart {
+  align-items: center;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.item-in-cart img {
+  height: 50px;
+}
+
+.item-in-cart input {
+  width: 2rem;
+}

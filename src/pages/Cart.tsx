@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CartItem, Product } from '../data';
+import ItemInCart from '../components/ItemInCart';
+import '../styles/Cart.css';
 
 interface CartProps {
   items: CartItem[];
@@ -26,7 +28,7 @@ const Cart = ({ items, updateCart }: CartProps) => {
         <p>No Items in Cart</p>
       )}
       {itemsToShow.map((item, index) =>
-        <p key={index}>item: {item.item.name} quantity: {item.quantity}</p>
+        <ItemInCart key={index} cartItem={item} updateCart={updateCart} />
       )}
     </div>
   );
