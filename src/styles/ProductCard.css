@@ -63,3 +63,12 @@
   font-weight: bolder;
   top: calc(50% + 9rem);
 }
+
+.card a {
+  color: black;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: purple;
+}

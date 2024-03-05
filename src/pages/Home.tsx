@@ -7,7 +7,7 @@ const Home = () => {
     <div id="Home" className="page">
       <div className="category-select">
         {CATEGORIES.map((category) => (
-          <Link to={`/products/${category.name}`}>
+          <Link key={category.name} to={`/categories/${category.name}`}>
             <div className="category">
               <img
                 className="category-img"

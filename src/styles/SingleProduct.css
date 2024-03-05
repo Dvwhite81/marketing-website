@@ -1,0 +1,23 @@
+.page .card {
+  grid-template-rows: 40% 20% 30% 10%;
+  height: 90vh;
+}
+
+.features-label {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.card ul {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.card li {
+  list-style: disc;
+}
+
+.card li p {
+  text-align: center;
+  width: fit-content;
+}

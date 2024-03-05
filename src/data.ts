@@ -1,4 +1,5 @@
 export interface Product {
+  id: string;
   name: string;
   price: number;
   features: string[];
@@ -7,6 +8,7 @@ export interface Product {
 
 export const HEADPHONES: Product[] = [
   {
+    id: 'h-0',
     name: 'Crusher® ANC 2 Sensory Bass Headphones with Active Noise Canceling',
     price: 229.99,
     features: [
@@ -20,6 +22,7 @@ export const HEADPHONES: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/437/153669/fc0078efc5dd4e2b579dd153ea420bc4865818c9cfeab31652d4e20abdd9a3ee__47830.1707030105.png?c=2',
   },
   {
+    id: 'h-1',
     name: 'Crusher Evo Sensory Bass Headphones with Personal Sound',
     price: 139.99,
     features: [
@@ -33,6 +36,7 @@ export const HEADPHONES: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/326/157116/6da27e13daa524c069cee84418277a4b1bb3801d2af8c01a9974ade89eed43d3__23067.1709449410.png?c=2',
   },
   {
+    id: 'h-2',
     name: 'Burton Crusher Evo Sensory Bass Headphones',
     price: 209.99,
     features: [
@@ -46,6 +50,7 @@ export const HEADPHONES: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/421/149715/2d92d21d2475281865881904f42ae3a9c8b58f40817b2652d704df8e624cce5f__29411.1703487752.png?c=2',
   },
   {
+    id: 'h-3',
     name: 'Grom Headphones for Kids',
     price: 24.99,
     features: [
@@ -62,6 +67,7 @@ export const HEADPHONES: Product[] = [
 
 export const EARBUDS: Product[] = [
   {
+    id: 'e-0',
     name: 'EcoBuds Sustainable True Wireless Earbuds',
     price: 39.99,
     features: [
@@ -75,6 +81,7 @@ export const EARBUDS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/453/157935/9b522efb0d8fb5e1e115afd0afbe154f6f25cc5bd268ca1c24176bfbd3f5d1ba__84838.1709598476.jpg?c=2',
   },
   {
+    id: 'e-1',
     name: 'Rail ANC True Wireless Earbuds',
     price: 99.99,
     features: [
@@ -88,6 +95,7 @@ export const EARBUDS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/434/156645/d9c74fedd1abe4982aec95c59ebdc29a3a62423b2c0067fcec26c310d807d077__60225.1708844587.png?c=2',
   },
   {
+    id: 'e-2',
     name: 'TMNT Push Active True Wireless Earbuds',
     price: 99.99,
     features: [
@@ -101,6 +109,7 @@ export const EARBUDS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/452/156969/ccab5cccefb8ddb6e3dab7781b7039f523513ec6f45fa119628acc52c7db956c__40862.1709322148.png?c=2',
   },
   {
+    id: 'e-3',
     name: 'Burton Push Active True Wireless Earbuds',
     price: 99.99,
     features: [
@@ -117,6 +126,7 @@ export const EARBUDS: Product[] = [
 
 export const SPEAKERS: Product[] = [
   {
+    id: 's-0',
     name: 'Barrel Wireless Bluetooth Speaker',
     price: 179.99,
     features: [
@@ -130,6 +140,7 @@ export const SPEAKERS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/435/145114/298317ac74db423a5df24a37b92e5a01c1af6e22f49a4018865d323c3d1bfdd4__76537.1701155067.png?c=2',
   },
   {
+    id: 's-1',
     name: 'Stomp Wireless Bluetooth Speaker',
     price: 139.99,
     features: [
@@ -143,6 +154,7 @@ export const SPEAKERS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/446/150779/2269187274d27a66bf78aa769e77a7c26e68adfdffc4ab6ce816bcd247d5304c__94088.1704752917.png?c=2',
   },
   {
+    id: 's-2',
     name: 'Ounce Wireless Bluetooth Speaker',
     price: 29.99,
     features: [
@@ -156,6 +168,7 @@ export const SPEAKERS: Product[] = [
       'https://cdn11.bigcommerce.com/s-k11cg5mzh9/images/stencil/500x659/products/428/146276/dc9ec53febc4a5f63ba2460c0ab8f4e11248f47c7d25069598254e6ec30e693d__65873.1701156096.png?c=2',
   },
   {
+    id: 's-3',
     name: 'Terrain XL Wireless Bluetooth Speaker',
     price: 29.99,
     features: [
@@ -190,20 +203,3 @@ export const PRODUCTS: Product[] = [
   ...EARBUDS,
   ...SPEAKERS,
 ];
-
-interface Index {
-  previousIndex: number;
-  currentIndex: number;
-  nextIndex: number;
-}
-
-export const determineClasses = (indexes: Index, cardIndex: number) => {
-  if (indexes.currentIndex === cardIndex) {
-    return 'active';
-  } else if (indexes.nextIndex === cardIndex) {
-    return 'next';
-  } else if (indexes.previousIndex === cardIndex) {
-    return 'prev';
-  }
-  return 'inactive';
-}

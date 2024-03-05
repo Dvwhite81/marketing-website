@@ -1,19 +1,33 @@
 import { useParams } from 'react-router-dom';
 import { PRODUCTS } from '../data';
+import '../styles/SingleProduct.css';
 
-interface SingleProductProps {
+const SingleProduct = () => {
+  const { id } = useParams();
+  const product = PRODUCTS.find((p) => p.id === id);
 
-}
+  if (!product) return;
 
-const SingleProduct = ({ }: SingleProductProps) => {
-  const { productName } = useParams();
-
-  const product = PRODUCTS.find((p) => p.name === productName);
+  const { name, price, features, image } = product;
 
   return (
-    <div className="product page">
-      <h1>Product Page</h1>
-      <h2>{product?.name}</h2>
+    <div className="page">
+      <div className="card">
+        <div className="card-img-container">
+          <img className="card-img" src={image} alt={name} />
+        </div>
+        <h2>{name}</h2>
+        <div className="features-container">
+          <ul>
+            {features.map((item, index) =>
+              <li key={index}>
+                <p>{item}</p>
+              </li>
+            )}
+          </ul>
+        </div>
+        <h4>${price}</h4>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Product } from '../data';
 import FeatureCarousel from './FeatureCarousel';
 import '../styles/ProductCard.css';
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
   index: number;
@@ -13,7 +14,7 @@ const ProductCard = ({ index, activeIndex, product }: ProductCardProps) => {
   const [imageClass, setImageClass] = useState('thumbnail');
   const [cardClass, setCardClass] = useState('');
 
-  const { name, price, features, image } = product;
+  const { id, name, price, features, image } = product;
 
   useEffect(() => {
     if (index === activeIndex) {
@@ -36,7 +37,9 @@ const ProductCard = ({ index, activeIndex, product }: ProductCardProps) => {
       <div className={`card-img-container ${imageClass}`} onClick={toggleImage}>
         <img className="card-img" src={image} alt={name} />
       </div>
-      <h2>{name}</h2>
+      <Link to={`/products/${id}`}>
+        <h2>{name}</h2>
+      </Link>
       <div className="features-container">
         <h4 className="features-label">Features:</h4>
         <FeatureCarousel items={features} />

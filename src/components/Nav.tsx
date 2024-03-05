@@ -5,9 +5,7 @@ import WhiteBanner from '../assets/images/white-banner.png';
 import WhiteShoppingIcon from '../assets/images/white-shopping-icon.png';
 import '../styles/Nav.css';
 
-interface NavProps {}
-
-const Nav = ({}: NavProps) => {
+const Nav = () => {
   const [dropdownPosition, setDropdownPosition] = useState('-20vw');
 
   const toggleDropdownPosition = () => {
