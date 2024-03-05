@@ -1,4 +1,4 @@
-.page .card {
+.single-product-page .card {
   grid-template-rows: 40% 20% 30% 10%;
   height: 90vh;
 }
@@ -8,16 +8,29 @@
   text-decoration: underline;
 }
 
-.card ul {
+.single-product-features {
   margin: 0 auto;
   width: fit-content;
 }
 
-.card li {
+.single-product-features li {
   list-style: disc;
 }
 
-.card li p {
+.single-product-features li p {
   text-align: center;
   width: fit-content;
+}
+
+.add-to-cart {
+  display: flex;
+  position: relative;
+}
+
+.add-cart-icon {
+  bottom: 1rem;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 1rem;
 }

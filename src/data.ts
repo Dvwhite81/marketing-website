@@ -203,3 +203,16 @@ export const PRODUCTS: Product[] = [
   ...EARBUDS,
   ...SPEAKERS,
 ];
+
+export interface CartItem {
+  item: Product;
+  quantity: number;
+}
+
+export const INITIAL_CART_ITEMS = PRODUCTS.map((product) => {
+  return {
+    item: product,
+    quantity: 0,
+  }
+}
+);

@@ -1,8 +1,13 @@
 import { useParams } from 'react-router-dom';
-import { PRODUCTS } from '../data';
+import { PRODUCTS, Product } from '../data';
+import AddCartIcon from '../assets/images/add-cart-icon.png';
 import '../styles/SingleProduct.css';
 
-const SingleProduct = () => {
+interface SingleProductProps {
+  openCartModal: (item: Product) => void;
+}
+
+const SingleProduct = ({ openCartModal }: SingleProductProps) => {
   const { id } = useParams();
   const product = PRODUCTS.find((p) => p.id === id);
 
@@ -11,22 +16,30 @@ const SingleProduct = () => {
   const { name, price, features, image } = product;
 
   return (
-    <div className="page">
+    <div className="single-product-page page">
       <div className="card">
         <div className="card-img-container">
           <img className="card-img" src={image} alt={name} />
         </div>
         <h2>{name}</h2>
         <div className="features-container">
-          <ul>
-            {features.map((item, index) =>
+          <ul className="single-product-features">
+            {features.map((item, index) => (
               <li key={index}>
                 <p>{item}</p>
               </li>
-            )}
+            ))}
           </ul>
         </div>
-        <h4>${price}</h4>
+        <div className="add-to-cart">
+          <h4>${price}</h4>
+          <img
+            className="add-cart-icon"
+            src={AddCartIcon}
+            alt="add to cart"
+            onClick={() => openCartModal(product)}
+          />
+        </div>
       </div>
     </div>
   );
