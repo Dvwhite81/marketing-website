@@ -1,0 +1,27 @@
+.category-select {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 70vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.category-select a {
+  color: whitesmoke;
+  height: 50%;
+  text-decoration: none;
+}
+
+.category {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.category-img {
+  height: 50%;
+  margin-bottom: 1rem;
+}

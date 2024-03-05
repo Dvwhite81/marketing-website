@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import WhiteMenuIcon from '../assets/images/white-menu-icon.png';
 import WhiteBanner from '../assets/images/white-banner.png';
 import WhiteShoppingIcon from '../assets/images/white-shopping-icon.png';
-import './Nav.css';
-import { Link } from 'react-router-dom';
+import '../styles/Nav.css';
 
 interface NavProps {}
 
@@ -19,7 +19,7 @@ const Nav = ({}: NavProps) => {
   }
 
   return (
-    <nav id="Nav">
+    <nav id="nav">
       <div className="nav-div dropdown" onClick={toggleDropdownPosition}>
         <img src={WhiteMenuIcon} alt="menu icon" />
         <div className="dropdown-content" style={{ left: dropdownPosition }}>
@@ -28,7 +28,13 @@ const Nav = ({}: NavProps) => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/products">Products</Link>
+              <Link to="/products/Headphones">Headphones</Link>
+            </li>
+            <li>
+              <Link to="/products/Earbuds">Earbuds</Link>
+            </li>
+            <li>
+              <Link to="/products/Speakers">Speakers</Link>
             </li>
             <li>
               <Link to="/cart">Cart</Link>

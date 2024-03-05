@@ -1,0 +1,38 @@
+.carousel-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  height: 70vh;
+  width: 100vw;
+}
+
+.btn.next-btn,
+.btn.prev-btn {
+  background-size: contain;
+  height: 3rem;
+  position: absolute;
+  width: 3rem;
+}
+
+.prev-btn {
+  background-image: url(/src/assets/images/black-previous-icon-transparent.png);
+  left: 1rem;
+  top: 50%;
+}
+
+.prev-btn:hover {
+  background-image: url(/src/assets/images/black-previous-icon.png);
+}
+
+.next-btn {
+  background-image: url(/src/assets/images/black-next-icon-transparent.png);
+  right: 1rem;
+  top: 50%;
+}
+
+.next-btn:hover {
+  background-image: url(/src/assets/images/black-next-icon.png);
+}
