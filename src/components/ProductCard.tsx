@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Product } from '../data';
-import Feature from './Feature';
+import FeatureCarousel from './FeatureCarousel';
 import '../styles/ProductCard.css';
 
 interface ProductCardProps {
@@ -38,7 +38,8 @@ const ProductCard = ({ index, activeIndex, product }: ProductCardProps) => {
       </div>
       <h2>{name}</h2>
       <div className="features-container">
-        {features.map((feature) => <Feature item={feature} />)}
+        <h4 className="features-label">Features:</h4>
+        <FeatureCarousel items={features} />
       </div>
       <h4>${price}</h4>
     </div>

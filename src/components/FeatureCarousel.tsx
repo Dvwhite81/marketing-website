@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { Product } from '../data';
-import ProductCard from './ProductCard';
-import '../styles/Carousel.css';
+import Feature from './Feature';
 
-interface CarouselProps {
-  items: Product[];
+interface FeatureCarouselProps {
+  items: string[];
 }
 
-const Carousel = ({ items }: CarouselProps) => {
+const FeatureCarousel = ({ items }: FeatureCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const totalItems = items.length;
@@ -30,15 +28,14 @@ const Carousel = ({ items }: CarouselProps) => {
   };
 
   return (
-    <div className="carousel">
-      {items.map((item, index) => (
-        <ProductCard
-          key={index}
-          index={index}
-          activeIndex={activeIndex}
-          product={item}
-        />
-      ))}
+    <div className="carousel feature-carousel">
+      <ul className="carousel-content">
+        {items.map((item, index) => (
+          <li key={index}>
+            <Feature index={index} activeIndex={activeIndex} item={item} />
+          </li>
+        ))}
+      </ul>
       <button
         type="button"
         className="btn carousel-btn prev-btn"
@@ -51,6 +48,6 @@ const Carousel = ({ items }: CarouselProps) => {
       />
     </div>
   );
-};
+}
 
-export default Carousel;
+export default FeatureCarousel;
